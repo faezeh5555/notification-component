@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button class="btn" onclick='showToast("new message"," top right","error")'>click here</button>
+    <div id="toast"></div>
+
+
+    <script>
+        function showToast(message, position, type){
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+
+            if(message) toast.innerText = message;
+            if(position) toast.className += position;
+            console.log('looo');
+            if(type) toast.classList.add(type);
+             
+            setTimeout(function(){
+                toast.classList.remove('show')
+            },3000)
+        }
+
+    </script>
+</body>
+</html>
